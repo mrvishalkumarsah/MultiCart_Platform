@@ -1,3 +1,5 @@
+import "@/models/user.model";
+import "@/models/product.model";
 import { NextRequest, NextResponse } from "next/server";
 import connectDb from "@/lib/db";
 import { auth } from "@/auth";
