@@ -28,10 +28,15 @@ export async function POST(req:NextRequest) {
                 {user},
             {status:200})
 
-    } catch (error) {
-        return NextResponse.json(
-                {message:`register error ${error}`},
-            {status:500})
-    }
+    } catch (error: any) {
+    console.error("REGISTER ERROR:", error);
+
+    return NextResponse.json(
+        {
+            message: error?.message || "Server Error",
+        },
+        { status: 500 }
+    );
+}
     
 }
